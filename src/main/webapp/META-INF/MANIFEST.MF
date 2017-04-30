@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Implementation-Title: testblog2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: elessar
+Implementation-Vendor-Id: testblog2
+Class-Path: dependency-wars/spring-boot-starter-security-1.5.2.RELEASE
+ .jar dependency-wars/spring-boot-starter-1.5.2.RELEASE.jar dependency
+ -wars/spring-boot-starter-logging-1.5.2.RELEASE.jar dependency-wars/l
+ ogback-classic-1.1.11.jar dependency-wars/logback-core-1.1.11.jar dep
+ endency-wars/jul-to-slf4j-1.7.24.jar dependency-wars/log4j-over-slf4j
+ -1.7.24.jar dependency-wars/snakeyaml-1.17.jar dependency-wars/spring
+ -aop-4.3.7.RELEASE.jar dependency-wars/spring-beans-4.3.7.RELEASE.jar
+  dependency-wars/spring-security-config-4.2.2.RELEASE.jar dependency-
+ wars/spring-security-core-4.2.2.RELEASE.jar dependency-wars/spring-co
+ ntext-4.3.7.RELEASE.jar dependency-wars/spring-security-web-4.2.2.REL
+ EASE.jar dependency-wars/spring-expression-4.3.7.RELEASE.jar dependen
+ cy-wars/spring-web-4.3.7.RELEASE.jar dependency-wars/spring-boot-star
+ ter-thymeleaf-1.5.2.RELEASE.jar dependency-wars/spring-boot-starter-w
+ eb-1.5.2.RELEASE.jar dependency-wars/spring-boot-starter-tomcat-1.5.2
+ .RELEASE.jar dependency-wars/tomcat-embed-core-8.5.11.jar dependency-
+ wars/tomcat-embed-el-8.5.11.jar dependency-wars/tomcat-embed-websocke
+ t-8.5.11.jar dependency-wars/hibernate-validator-5.3.4.Final.jar depe
+ ndency-wars/validation-api-1.1.0.Final.jar dependency-wars/classmate-
+ 1.3.3.jar dependency-wars/jackson-databind-2.8.7.jar dependency-wars/
+ jackson-annotations-2.8.0.jar dependency-wars/jackson-core-2.8.7.jar 
+ dependency-wars/spring-webmvc-4.3.7.RELEASE.jar dependency-wars/thyme
+ leaf-spring4-2.1.5.RELEASE.jar dependency-wars/thymeleaf-layout-diale
+ ct-1.4.0.jar dependency-wars/groovy-2.4.9.jar dependency-wars/spring-
+ boot-devtools-1.5.2.RELEASE.jar dependency-wars/spring-boot-1.5.2.REL
+ EASE.jar dependency-wars/spring-boot-autoconfigure-1.5.2.RELEASE.jar 
+ dependency-wars/mysql-connector-java-5.1.41.jar dependency-wars/sprin
+ g-core-4.3.7.RELEASE.jar dependency-wars/spring-boot-starter-data-jpa
+ -1.5.2.RELEASE.jar dependency-wars/spring-boot-starter-aop-1.5.2.RELE
+ ASE.jar dependency-wars/aspectjweaver-1.8.9.jar dependency-wars/sprin
+ g-boot-starter-jdbc-1.5.2.RELEASE.jar dependency-wars/tomcat-jdbc-8.5
+ .11.jar dependency-wars/tomcat-juli-8.5.11.jar dependency-wars/spring
+ -jdbc-4.3.7.RELEASE.jar dependency-wars/hibernate-core-5.0.12.Final.j
+ ar dependency-wars/jboss-logging-3.3.0.Final.jar dependency-wars/hibe
+ rnate-jpa-2.1-api-1.0.0.Final.jar dependency-wars/javassist-3.21.0-GA
+ .jar dependency-wars/antlr-2.7.7.jar dependency-wars/jandex-2.0.0.Fin
+ al.jar dependency-wars/dom4j-1.6.1.jar dependency-wars/hibernate-comm
+ ons-annotations-5.0.1.Final.jar dependency-wars/hibernate-entitymanag
+ er-5.0.12.Final.jar dependency-wars/javax.transaction-api-1.2.jar dep
+ endency-wars/spring-data-jpa-1.11.1.RELEASE.jar dependency-wars/sprin
+ g-data-commons-1.13.1.RELEASE.jar dependency-wars/spring-orm-4.3.7.RE
+ LEASE.jar dependency-wars/spring-tx-4.3.7.RELEASE.jar dependency-wars
+ /jcl-over-slf4j-1.7.24.jar dependency-wars/spring-aspects-4.3.7.RELEA
+ SE.jar dependency-wars/thymeleaf-extras-springsecurity4-2.1.2.RELEASE
+ .jar dependency-wars/thymeleaf-2.1.5.RELEASE.jar dependency-wars/ognl
+ -3.0.8.jar dependency-wars/unbescape-1.1.0.RELEASE.jar dependency-war
+ s/slf4j-api-1.7.24.jar
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_121
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: testBlog.BlogApplication
+

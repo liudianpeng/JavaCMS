@@ -1,0 +1,33 @@
+<main>
+    <div id="mainconfig">
+        <div id="settings">
+            <ul id="settings-options">
+                <li class="settings-options-li"><a  class="settings-options-link" href="">Background Image</a></li>
+                <li class="settings-options-li"><a  class="settings-options-link" href="">Video Background</a></li>
+                <li class="settings-options-li"><a  class="settings-options-link" href="">Font and Colors</a></li>
+                <li class="settings-options-li"><a  class="settings-options-link" href="">Menus</a></li>
+                <li class="settings-options-li"><a  class="settings-options-link" href="">Header and Footer</a></li>
+            </ul>
+        </div>
+        <div id="set_options">
+            <div id="iframe_div" onload="indexAjax">
+                <iframe id="iframe_preview" srcdoc=""></iframe>
+            </div>
+            <div id="buttons_div">
+                <div id="choose_button_div">
+                    <label>Choose an image</label>
+                    <form id="form">
+                        <input type="file" id="files" multiple="true" name="files" />
+                    </form>
+                </div>
+                <div id="done_button_div">
+                    <label>DONE</label>
+                    <input type="button" id="done_button"/>
+                </div>
+            </div>
+            <div id="options">
+            </div>
+
+        </div>
+    </div>
+</main>

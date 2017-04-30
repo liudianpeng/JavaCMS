@@ -1,0 +1,18 @@
+<video autoplay="autoplay" muted="muted" loop="loop" id="video-index">
+    <source type="video/mp4" src="../../video/BeautifulNature-Spring2014.mp4"/>
+</video>
+<main id="main-index">
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-6" th:each="category : ${categories}">
+                <header>
+                    <h2>
+                        <a th:href="@{/category/{id}(id=${category.id})}" th:text="${category.name + ' (' + #sets.size(category.articles) + ')'}">
+                        </a>
+                    </h2>
+                    <h1>Hellodcscscs</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+</main>

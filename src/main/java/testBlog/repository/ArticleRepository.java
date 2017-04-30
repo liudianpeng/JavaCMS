@@ -1,0 +1,7 @@
+package testBlog.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import testBlog.entity.Article;
+
+public interface ArticleRepository extends JpaRepository<Article,Integer> {
+}
