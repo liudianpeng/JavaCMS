@@ -28,7 +28,6 @@ public class HomeController {
 
         model.addAttribute("view","home/index");
         model.addAttribute("categories", categories);
-        System.out.println(System.getProperties());
         return "base-layout";
     }
 
