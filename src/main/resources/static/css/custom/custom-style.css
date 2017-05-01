@@ -181,7 +181,9 @@ form {
     background: #000;
 }
 
-#main-index,#arcticle-details-main,#list-articles-main {
+#main-index,
+#arcticle-details-main,
+#list-articles-main {
     background: rgba(0,0,0,0.5);
     padding: 2rem;
     width: 75%;
