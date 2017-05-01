@@ -187,6 +187,7 @@ form {
 .site-config-template,
 .article-template,
 .error-template,
+.user-template,
 #main-list-articles,
 #main-tag-articles{
     background: rgba(0,0,0,0.5);
