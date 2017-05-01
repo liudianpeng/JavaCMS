@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="testblog2:war exploded">
+    <output-path>$PROJECT_DIR$/target/testblog2-0.0.1-SNAPSHOT</output-path>
+    <root id="root" />
+  </artifact>
+</component>
