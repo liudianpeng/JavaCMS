@@ -208,3 +208,25 @@ html,body {
     color: #fff;
 }
 
+#main-menu-ul,
+#admin-menu {
+    display: inline-blockblock;
+    width: 100%;
+    padding: 2em;
+    text-align: center;
+}
+#main-menu-ul > li,
+#admin-menu > li {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin-right: 1em;
+    border: 0 dashed #fff;
+    transition: border .5s;
+}
+#main-menu-ul > li:hover,
+#admin-menu > li:hover {
+    border-bottom: .5em solid #c00;
+}
+
