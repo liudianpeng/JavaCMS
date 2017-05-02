@@ -197,7 +197,9 @@ html,body {
 #main-menu-ul,
 #admin-menu {
     display: inline-blockblock;
-    width: 100%;
+    width: 90%;
+    margin: auto;
+    padding: 0;
     /*padding: 2em;*/
     text-align: center;
 }
@@ -215,6 +217,11 @@ html,body {
 #main-menu-ul > li:hover,
 #admin-menu > li:hover {
     /*border-bottom: .5em solid #c00;*/
+}
+#admin-menu > li > a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 header {
     text-align: center;

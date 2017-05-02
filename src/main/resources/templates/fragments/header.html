@@ -4,37 +4,32 @@
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" id="main-menu-ul">
-                    <section class="dropdown" sec:authorize="hasRole('ADMIN')">
-                        <ul class="dropdown-menu" role="menu" id="admin-menu">
-                            <li><a th:href="@{/admin/categories/}">Categories</a></li>
-                            <li><a th:href="@{/admin/users/}">Users</a></li>
-                        </ul>
-                    </section>
-                    <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/article/create}">
-                            Create Article
-                        </a>
+                    <li sec:authorize="hasRole('ADMIN')">
+                        <a th:href="@{/admin/categories/}">Categories</a>
+                    </li>
+                    <li sec:authorize="hasRole('ADMIN')">
+                        <a th:href="@{/admin/users/}">Users</a>
+                    </li>
+                    <li sec:authorize="hasRole('ADMIN')">
+                        <a th:href="@{/admin/site-config/}">Site Configuration</a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/profile}">
-                            My Profile
-                        </a>
+                        <a th:href="@{/article/create}">Create Article</a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/logout}">
-                            Logout
-                        </a>
+                        <a th:href="@{/chat}">Chat</a>
                     </li>
-
-                    <li sec:authorize="isAnonymous()">
-                        <a th:href="@{/register}">
-                            REGISTER
-                        </a>
+                    <li sec:authorize="isAuthenticated()">
+                        <a th:href="@{/profile}">My Profile</a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <a th:href="@{/logout}">Logout</a>
                     </li>
                     <li sec:authorize="isAnonymous()">
-                        <a th:href="@{/login}">
-                            LOGIN
-                        </a>
+                        <a th:href="@{/register}">REGISTER</a>
+                    </li>
+                    <li sec:authorize="isAnonymous()">
+                        <a th:href="@{/login}">LOGIN</a>
                     </li>
                 </ul>
             </div>
