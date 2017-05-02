@@ -1,0 +1,49 @@
+<main id="main-chat-main">
+    <audio id="audio">
+        Audio tag not supported! Please update your browser!
+    </audio>
+    <video id="video" autoplay="autoplay">
+        Audio tag not supported! Please update your browser!
+    </video>
+    <div id="controls=div">
+        <button id="play" class="buttons">Play</button>
+        <button id="stop" class="buttons">Stop</button>
+    </div>
+</main>
+<style type="text/css">
+    html,body {
+        margin: 0;
+        padding:0;
+    }
+    .buttons {
+        width: 25%;
+        height: 30px;
+    }
+    main {
+        text-align: center;
+    }
+    #video {
+        width: 50%;
+    }
+</style>
+<script type="text/javascript" src="../../static/scripts/custom/adapter.js"></script>
+<script type="text/javascript">
+    var video_output = document.getElementById("video");
+    document.getElementById("play").addEventListener("click",function(eventObject) {
+        try {
+            navigator.getUserMedia({video:true,audio:true})
+                .then(function (stream) {
+                    video_output.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        catch(err) {
+            console.log(err);
+        }
+    });
+    document.getElementById("stop").addEventListener("click",function(eventObject) {
+        attachMediaStream(video_output,null);
+    });
+</script>
