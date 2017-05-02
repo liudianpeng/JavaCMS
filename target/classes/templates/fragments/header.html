@@ -1,24 +1,15 @@
-<header  th:fragment="header" id="petar">
+<header  th:fragment="header">
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
-            <div class="navbar-header">
-                <a th:href="@{/}" class="navbar-brand">RC FAN BLOG Bulgaria</a>
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" id="main-menu-ul">
-                    <li class="dropdown" sec:authorize="hasRole('ADMIN')">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
+                    <section class="dropdown" sec:authorize="hasRole('ADMIN')">
                         <ul class="dropdown-menu" role="menu" id="admin-menu">
                             <li><a th:href="@{/admin/categories/}">Categories</a></li>
                             <li><a th:href="@{/admin/users/}">Users</a></li>
                         </ul>
-                    </li>
+                    </section>
                     <li sec:authorize="isAuthenticated()">
                         <a th:href="@{/article/create}">
                             Create Article
