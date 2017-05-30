@@ -9,6 +9,15 @@
         <button id="play" class="buttons">Play</button>
         <button id="stop" class="buttons">Stop</button>
     </div>
+    <div id="chat_wrapper">
+        <textarea id="chat_box" class="chat_tools" cols="75" rows="20"></textarea>
+        <div id="chat_buttons_wrapper">
+            <input id="chat_input" class="chat_tools" type="text"/>
+            <button class="chat_buttons">EMO</button>
+            <button class="chat_buttons">SEND</button>
+            <button class="chat_buttons">DELETE</button>
+        </div>
+    </div>
 </main>
 <style type="text/css">
     html,body {
@@ -16,34 +25,110 @@
         padding:0;
     }
     .buttons {
-        width: 25%;
+        width: 15%;
         height: 30px;
     }
     main {
         text-align: center;
     }
     #video {
-        width: 50%;
+        width: 30%;
     }
 </style>
-<script type="text/javascript" src="../../static/scripts/custom/adapter.js"></script>
-<script type="text/javascript">
-    var video_output = document.getElementById("video");
-    document.getElementById("play").addEventListener("click",function(eventObject) {
-        try {
-            navigator.getUserMedia({video:true,audio:true})
-                .then(function (stream) {
-                    video_output.srcObject = stream;
-                })
-                .catch(function (error) {
-                    console.log(error);
+<script th:src="@{/scripts/jquery-2.2.4.min.js}"></script>
+<script th:src="@{/scripts/custom/sockjs.js}"></script>
+<script th:src="@{/scripts/custom/stomp.js}"></script>
+<script>
+            var textarea  = document.getElementById("chat_box");
+            textarea.setAttribute("cols","100");
+            document.getElementById("chat_buttons_wrapper").style.width = textarea.offsetWidth + "px";
+            //var sockjs = SockJS("http://localhost:8443/connect");
+            var sockjs = SockJS("https://localhost:8443/connect");
+            sockjs.onopen = function (event) {
+                console.log(event);
+                sockjs.send("Hello from sockjs2");
+            };
+            sockjs.onclose = function (event) {
+                console.log(event);
+            };
+            sockjs.onmessage = function (message) {
+                alert(message);
+            };
+            sockjs.onerror = function (error) {
+                alert(error);
+            };
+            var stomp = Stomp.over(sockjs);
+//            stomp.debug = function(str) {
+//                alert(str);
+//            };
+//            var subscribe_headers = {ack: 'client', 'selector': "location = 'Europe'"};
+
+            function replay_subscribe_func() {
+               // return stomp.subscribe("/client/topic/replay",message_callback);
+                return stomp.subscribe("/topic/replay",message_callback);
+            };
+            function error_subscribe_func() {
+                //return stomp.subscribe("/cleint/topic/error",message_callback);
+                return stomp.subscribe("/topic/error",message_callback);
+            };
+            var connect_error = function (error) {
+                alert("STOMP error " + error);
+            };
+            var connected = function (frame) {
+                console.log(frame);
+                window.replay_subscribe  = replay_subscribe_func();
+                window.error_subscribe = error_subscribe_func();
+            };
+            var message_callback = function (message) {
+                if (message.body) {
+                    document.getElementById("chat_box").innerHTML += JSON.parse(message.body).username + ":" + JSON.parse(message.body).message + "\n";
+                    //alert("Messsage: " + message.body);
+                } else {
+                    alert("Messsage empty");
+                }
+            };
+            stomp.connect({},connected,connect_error);
+            var check_subscribe = window.setInterval(function (event) {
+                if (replay_subscribe) {
+                    console.log(replay_subscribe);
+                    console.log(error_subscribe);
+                    clearInterval(check_subscribe);
+                }
+            },1000);
+
+            var video_output = document.getElementById("video");
+            document.getElementById("play").addEventListener("click",function(eventObject) {
+                try {
+                    console.log(navigator);
+                    navigator.mediaDevices.getUserMedia({video:true,audio:true})
+                        .then(function (stream) {
+                            console.log(stream);
+                            video_output.srcObject = stream;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                catch(err) {
+                    console.log(err);
+                }
+            });
+            document.getElementById("stop").addEventListener("click",function(eventObject) {
+                //attachMediaStream(video_output,null);
+                stomp.disconnect(function () {
+                    window.replay_subscribe.unsubscribe();
+                    window.error_subscribe.unsubscribe();
+                    delete window.replay_subscribe;
+                    delete window.error_subscribe;
+                    alert("Disconnected!");
+                    console.log(window.replay_subscribe);
+                    console.log(window.error_subscribe);
                 });
-        }
-        catch(err) {
-            console.log(err);
-        }
-    });
-    document.getElementById("stop").addEventListener("click",function(eventObject) {
-        attachMediaStream(video_output,null);
-    });
+            });
+            document.getElementById("chat_input").addEventListener("keydown",function (eventObject) {
+                if (eventObject.keyCode == 13) {
+                    stomp.send("/client/message",{},JSON.stringify({username:"petar",message:eventObject.target.value}));
+                    eventObject.target.value = "";
+                };
+            });
 </script>

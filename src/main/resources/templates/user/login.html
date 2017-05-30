@@ -1,7 +1,7 @@
 <main id="main-user-login" class="user-template">
     <div class="container body-content span=8 offset=2">
         <div class="well">
-            <form class="form-horizontal" th:action="@{/login}" method="post">
+            <form class="form-horizontal" th:action="@{/login}" method="post" id="forma">
                 <fieldset>
                     <legend>Login</legend>
                     <div class="form-group">
@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <input id="input" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-4">

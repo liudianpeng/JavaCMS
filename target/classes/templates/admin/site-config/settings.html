@@ -25,7 +25,7 @@
                     <input type="button" id="done_button"/>
                 </div>
             </div>
-            <div id="options">
+            <div id="options" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
             </div>
 
         </div>

@@ -1,5 +1,8 @@
 package testBlog.controller.admin;
 import org.apache.tomcat.jni.Directory;
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -63,6 +66,7 @@ public class SiteConfigController {
 
     @GetMapping("")
     public String getView(Model model) {
+
         model.addAttribute("view","admin/site-config/settings");
         return "base-layout";
     }
@@ -98,10 +102,13 @@ public class SiteConfigController {
 
 
     @RequestMapping(method = RequestMethod.POST,value = "/inComingMessage",consumes = { MediaType.APPLICATION_FORM_URLENCODED_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.IMAGE_JPEG_VALUE},produces = MediaType.TEXT_HTML_VALUE)
-    @ResponseWrapper
     public @ResponseBody String inComingMessage(@RequestParam("job") String getJobName, @RequestParam("param") String getParamaValue, @RequestPart("files") MultipartFile[] multipartFile, @RequestHeader() HttpHeaders headers) {
-        System.out.println(System.getProperties());
-        System.out.println(getJobName);
+        System.out.println(headers);
+        //System.out.println(System.getProperties());
+        //System.out.println(getJobName);
+        for (int i=0;i<multipartFile.length;i++) {
+            System.out.println(multipartFile[i]);
+        }
         String status = "No job done,yet!";
         switch (getJobName) {
             case "imageUpload_siteBackground": {status = write_files(multipartFile); break;}
