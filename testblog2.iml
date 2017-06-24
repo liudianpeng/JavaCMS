@@ -111,6 +111,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.3.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.3.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.session:spring-session:2.0.0.BUILD-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.0.RC1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.0.RC2" level="project" />
   </component>
 </module>

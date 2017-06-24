@@ -197,7 +197,7 @@ html,body {
 
 #main-menu-ul,
 #admin-menu {
-    display: inline-blockblock;
+    display: inline-block;
     width: 90%;
     margin: auto;
     padding: 0;
