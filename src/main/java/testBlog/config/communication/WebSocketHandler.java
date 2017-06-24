@@ -17,47 +17,47 @@ import java.lang.*;
 
 public class WebSocketHandler implements org.springframework.web.socket.WebSocketHandler{
 
-    //private Map<String,WebSocketSession> socketsBysocketId = new HashMap<String,WebSocketSession>();
-    //private Map<String,ArrayList<WebSocketMessage<?>>> messagesBysocketId = new HashMap<String,ArrayList<WebSocketMessage<?>>>();
+    private Map<String,WebSocketSession> socketsBysocketId = new HashMap<String,WebSocketSession>();
+    private Map<String,ArrayList<WebSocketMessage<?>>> messagesBysocketId = new HashMap<String,ArrayList<WebSocketMessage<?>>>();
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-//        socketsBysocketId.put(session.getId(),session);
-//        messagesBysocketId.put(session.getId(),new ArrayList<WebSocketMessage<?>>(2000));
-//        System.out.println("WebSocket session with id '" + session.getId() + "' established!");
-//        System.out.println(socketsBysocketId.size());
-//        messagesBysocketId.forEach((socketId,arrayOfmessages) -> {
-//            if (socketId != session.getId()) {
-//                for (int i=0;i<arrayOfmessages.size();i++){
-//                    try {
-//                        session.sendMessage(arrayOfmessages.get(i));
-//                    } catch (IOException exept) {
-//                        System.out.println(exept);
-//                    }
-//                }
-//                System.out.println(socketId);
-//            }
-//        });
+        socketsBysocketId.put(session.getId(),session);
+        messagesBysocketId.put(session.getId(),new ArrayList<WebSocketMessage<?>>(2000));
+        System.out.println("WebSocket session with id '" + session.getId() + "' established!");
+        System.out.println(socketsBysocketId.size());
+        messagesBysocketId.forEach((socketId,arrayOfmessages) -> {
+            if (socketId != session.getId()) {
+                for (int i=0;i<arrayOfmessages.size();i++){
+                    try {
+                        session.sendMessage(arrayOfmessages.get(i));
+                    } catch (IOException exept) {
+                        System.out.println(exept);
+                    }
+                }
+                System.out.println(socketId);
+            }
+        });
     }
 
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
-//        System.out.println("WebSocket session with id '" + session.getId() +
-//                           "' sent message:\n" + message + "\n");
-//        messagesBysocketId.forEach((key,value)->{
-//            if(key==session.getId()){
-//                value.add(message);
-//            }
-//        });
-//        socketsBysocketId.forEach((webSocket_session_id,webSocketSession) -> {
-//            if(webSocket_session_id != session.getId()) {
-//                try {
-//                    webSocketSession.sendMessage(message);
-//                } catch (IOException exept) {
-//                    System.out.println(exept);
-//                }
-//            }
- //       } );
+        System.out.println("WebSocket session with id '" + session.getId() +
+                           "' sent message:\n" + message + "\n");
+        messagesBysocketId.forEach((key,value)->{
+            if(key==session.getId()){
+                value.add(message);
+            }
+        });
+        socketsBysocketId.forEach((webSocket_session_id,webSocketSession) -> {
+            if(webSocket_session_id != session.getId()) {
+                try {
+                    webSocketSession.sendMessage(message);
+                } catch (IOException exept) {
+                    System.out.println(exept);
+                }
+            }
+        } );
     }
 
     @Override
@@ -69,16 +69,16 @@ public class WebSocketHandler implements org.springframework.web.socket.WebSocke
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
-//        System.out.println("msg " + messagesBysocketId.size());
-//        messagesBysocketId.remove(session.getId());
-//        System.out.println(
-//                "WebSocket session with id '" + session.getId() +
-//                "' closed with close status '" + closeStatus.getReason() +
-//                "' and close code '" + closeStatus.getCode() + "'!");
-//        socketsBysocketId.remove(session.getId());
-//        messagesBysocketId.remove(session.getId());
-//        System.out.println(socketsBysocketId.size());
-//        System.out.println("msg " + messagesBysocketId.size());
+        System.out.println("msg " + messagesBysocketId.size());
+        messagesBysocketId.remove(session.getId());
+        System.out.println(
+                "WebSocket session with id '" + session.getId() +
+                "' closed with close status '" + closeStatus.getReason() +
+                "' and close code '" + closeStatus.getCode() + "'!");
+        socketsBysocketId.remove(session.getId());
+        messagesBysocketId.remove(session.getId());
+        System.out.println(socketsBysocketId.size());
+        System.out.println("msg " + messagesBysocketId.size());
     }
 
     @Override
