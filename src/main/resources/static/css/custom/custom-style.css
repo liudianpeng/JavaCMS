@@ -263,3 +263,21 @@ header {
 #main-chat-main {
     background-color: #b62516;
 }
+
+/***************************************/
+
+#local_video,#remote_video {
+    width: 45%;
+    height: 300px;
+}
+#conversation {
+    height: 200px;
+    width: 500px;
+    resize: none;
+}
+#local_message {
+    width: 500px;
+}
+#rct_connect,#rct_close,#start_video {
+
+}
