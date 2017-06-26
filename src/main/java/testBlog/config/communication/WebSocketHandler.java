@@ -1,21 +1,13 @@
 package testBlog.config.communication;
 
-import org.springframework.boot.autoconfigure.web.ServerProperties;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.socket.CloseStatus;
-import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
-import java.lang.ArrayIndexOutOfBoundsException;
 import java.lang.*;
 
 
@@ -23,7 +15,6 @@ public class WebSocketHandler implements org.springframework.web.socket.WebSocke
 
     private Map<String,WebSocketSession> socketsBysocketId = new HashMap<String,WebSocketSession>();
     private Map<String,ArrayList<WebSocketMessage<?>>> messagesBysocketId = new HashMap<String,ArrayList<WebSocketMessage<?>>>();
-
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -46,9 +37,8 @@ public class WebSocketHandler implements org.springframework.web.socket.WebSocke
     }
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
-        String name = SecurityContextHolder.getContext().getAuthentication().getName();
         System.out.println("WebSocket session with id '" + session.getId() +
-                           "' sent message:\n" + name + " " + message + "\n");
+                           "' sent message:\n" + message + "\n");
         messagesBysocketId.forEach((key,value)->{
             if(key==session.getId()){
                 value.add(message);
