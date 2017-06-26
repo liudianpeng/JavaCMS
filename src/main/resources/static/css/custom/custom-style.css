@@ -225,13 +225,13 @@ header {
 /***************************************/
 /* Chat Page  */
 #video_chat_video_tags {
-    background-color: #0d1318;
+  /*  background-color: #0d1318; */
     margin: 0 auto;
     padding: 0;
     text-align: center;
 }
 #video_chat_text_tags {
-    background-color: #0a4b3e;
+  /*  background-color: #0a4b3e; */
     text-align: center;
 }
 #local_video,#remote_video {
