@@ -21,7 +21,7 @@ public class WebSocketHandler implements org.springframework.web.socket.WebSocke
         socketsBysocketId.put(session.getId(),session);
         messagesBysocketId.put(session.getId(),new ArrayList<WebSocketMessage<?>>(2000));
         System.out.println("WebSocket session with id '" + session.getId() + "' established!");
-        System.out.println(socketsBysocketId.size());
+        System.out.println("WebSocket connections " + socketsBysocketId.size());
         messagesBysocketId.forEach((socketId,arrayOfmessages) -> {
             if (socketId != session.getId()) {
                 for (int i=0;i<arrayOfmessages.size();i++){

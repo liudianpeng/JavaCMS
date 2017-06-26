@@ -1,12 +1,21 @@
 
-    <video id="local_video" autoplay="autoplay"></video>
-    <video id="remote_video" autoplay="autoplay"></video>
-    <button id="rct_connect">Connect</button>
-    <button id="rct_close">Disconnect</button>
-    <button id="start_video">Start video</button>
-    <input id="files" type="file" multiple="multiple" />
-    <textarea id="conversation"></textarea>
-    <input type="text" id="local_message"/>
+    <div id="video_chat_video_tags" class="video_chat_divs">
+        <video id="local_video" autoplay="autoplay"></video>
+        <video id="remote_video" autoplay="autoplay"></video>
+    </div>
+
+    <!--<div id="video_chat_button_tags" class="video_chat_divs">-->
+        <!--<button id="rct_connect">Connect</button>-->
+        <!--<button id="rct_close">Disconnect</button>-->
+        <!--<button id="start_video">Start video</button>-->
+        <!--<input id="files" type="file" multiple="multiple" />-->
+    <!--</div>-->
+
+    <div id="video_chat_text_tags" class="video_chat_divs">
+        <textarea id="conversation" readonly="readonly"></textarea>
+        <input type="text" id="local_message"/>
+    </div>
+
     <script th:src="@{/scripts/custom/sockjs.js}"></script>
     <script th:src="@{/scripts/custom/adapter.js}"></script>
     <script th:src="@{/scripts/custom/webrct.js}"></script>

@@ -1,29 +1,27 @@
 <header  th:fragment="header">
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right" id="main-menu-ul">
+    <div id="header_main_div" class="header_divs">
+        <div id="header_menu_div" class="header_divs">
+                <ul id="main-menu-ul">
                     <li sec:authorize="hasRole('ADMIN')">
-                        <a th:href="@{/admin/categories/}">Categories</a>
+                        <a th:href="@{/admin/categories/}">CATEGORIES</a>
                     </li>
                     <li sec:authorize="hasRole('ADMIN')">
-                        <a th:href="@{/admin/users/}">Users</a>
+                        <a th:href="@{/admin/users/}">USERS</a>
                     </li>
                     <li sec:authorize="hasRole('ADMIN')">
-                        <a th:href="@{/admin/site-config/}">Site Configuration</a>
+                        <a th:href="@{/admin/site-config/}">CONFIGURATION</a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/article/create}">Create Article</a>
+                        <a th:href="@{/article/create}">CREATE ARTICLE</a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/chat-page/}">Chat</a>
+                        <a th:href="@{/chat-page/}">CHAT</a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/profile}">My Profile</a>
+                        <a th:href="@{/profile}">PROFILE</a>
                     </li>
                     <li sec:authorize="isAuthenticated()">
-                        <a th:href="@{/logout}">Logout</a>
+                        <a th:href="@{/logout}">LOGOUT</a>
                     </li>
                     <li sec:authorize="isAnonymous()">
                         <a th:href="@{/register}">REGISTER</a>
@@ -32,7 +30,6 @@
                         <a th:href="@{/login}">LOGIN</a>
                     </li>
                 </ul>
-            </div>
         </div>
     </div>
 </header>
