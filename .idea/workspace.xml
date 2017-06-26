@@ -81,8 +81,8 @@
       <file leaf-file-name="WebSocketHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/testBlog/config/communication/WebSocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            <state relative-caret-position="478">
+              <caret line="51" column="49" lean-forward="true" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1339,12 +1339,12 @@
       <workItem from="1498349432406" duration="8390000" />
       <workItem from="1498420778167" duration="834000" />
       <workItem from="1498462059107" duration="153000" />
-      <workItem from="1498463483278" duration="1268000" />
+      <workItem from="1498463483278" duration="1737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543703000" />
+    <option name="totallyTimeSpent" value="544172000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1777,8 +1777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testBlog/config/communication/WebSocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        <state relative-caret-position="478">
+          <caret line="51" column="49" lean-forward="true" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

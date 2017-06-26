@@ -46,9 +46,9 @@ public class WebSocketHandler implements org.springframework.web.socket.WebSocke
     }
     @Override
     public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
-        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        //String name = SecurityContextHolder.getContext().getAuthentication().getName();
         System.out.println("WebSocket session with id '" + session.getId() +
-                           "' sent message:\n" +name + " " + message + "\n");
+                           "' sent message:\n" + /*name +*/ " " + message + "\n");
         messagesBysocketId.forEach((key,value)->{
             if(key==session.getId()){
                 value.add(message);
