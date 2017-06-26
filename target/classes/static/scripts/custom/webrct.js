@@ -14,7 +14,7 @@ var websocket,
     };
 
 function open_socket() {
-    websocket = new SockJS("https://127.0.0.1:8443/service");
+    websocket = new SockJS("https://" + window.location.hostname + ":8443/service");
     websocket.onopen = function (event) {
         // console.log("Socket Opened!");
         // console.log(websocket);
