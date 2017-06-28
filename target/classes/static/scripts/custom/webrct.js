@@ -16,64 +16,50 @@ var websocket,
 function open_socket() {
     websocket = new SockJS("https://" + window.location.hostname + ":8443/service");
     websocket.onopen = function (event) {
-        // console.log("Socket Opened!");
-        // console.log(websocket);
+         console.log(event);
     };
     websocket.onclose = function (event) {
-        // console.log("Socket Closed!");
-        // console.log(event);
+         console.log(event);
     };
     websocket.onerror = function (event) {
-        // console.log("Socket error!");
-        // console.log(event);
+         console.log(event);
     };
     websocket.onmessage = function (socket_message) {
-        // console.log("Socket message!Beggin");
-//        console.log("Socket message!End");
         if (!local_connection) {
             rtc_connect(false);
         }
         var message = JSON.parse(socket_message.data);
-        // console.log("Message Data. Begin!");
-        // console.log(message);
-        // console.log("Message Data. End!");
         if (message.type && message.type == "offer") {
             local_connection.setRemoteDescription(new RTCSessionDescription(message))
                 .then(function () {
                     return local_connection.createAnswer();
                 })
                 .then(function (created_answer) {
-                    // console.log("Answer!");
-                    // console.log(created_answer);
                     return local_connection.setLocalDescription(created_answer);
                 })
                 .then(function () {
                     var answer = local_connection.localDescription;
                     websocket.send(JSON.stringify(answer));
-                    //  console.log("Send" + JSON.stringify(answer));
                 })
                 .catch(function (error) {
-                    // console.log("SetRemoteDescription error!");
-                    // console.log(error);
+                    console.log(error);
                 });
         } else if (message.type && message.type == "answer") {
             local_connection.setRemoteDescription(new RTCSessionDescription(message))
                 .catch(function (error) {
-                    //  console.log("SetRemoteDescription error!After answer!");
-                    //  console.log(error);
+                    console.log(error);
                 });
         } else {
             local_connection.addIceCandidate(new RTCIceCandidate(message))
                 .catch(function (error) {
-                    // console.log("AddIceCandidate error!");
-                    // console.log(error);
+                    console.log(error);
                 });
         }
     };
 }
 
 function rtc_connect(isInitiator) {
-    local_connection = new RTCPeerConnection(rtc_configuration);
+    local_connection = new RTCPeerConnection();
     local_connection.onicecandidate = function (event) {
         // console.log("Onicecandidate event!");
         // console.log(event);
