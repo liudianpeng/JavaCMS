@@ -59,7 +59,7 @@ function open_socket() {
 }
 
 function rtc_connect(isInitiator) {
-    local_connection = new RTCPeerConnection();
+    local_connection = new RTCPeerConnection(rtc_configuration);
     local_connection.onicecandidate = function (event) {
         // console.log("Onicecandidate event!");
         // console.log(event);
