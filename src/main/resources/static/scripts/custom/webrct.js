@@ -40,6 +40,7 @@ function open_socket() {
                 })
                 .then(function () {
                     var answer = local_connection.localDescription;
+                    console.log("answer send");
                     websocket.send(JSON.stringify(answer));
                 })
                 .catch(function (error) {
@@ -65,6 +66,7 @@ function rtc_connect(isInitiator) {
         // console.log("Onicecandidate event!");
         // console.log(event);
         // console.log(JSON.stringify(event.candidate));
+        console.log("cand");
         websocket.send(JSON.stringify(event.candidate));
     };
     local_connection.onnegotiationneeded = function (event) {
@@ -76,6 +78,7 @@ function rtc_connect(isInitiator) {
                 return local_connection.setLocalDescription(offer);
             })
             .then(function () {
+                console.log("desc");
                 websocket.send(JSON.stringify(local_connection.localDescription));
                 //   console.log(JSON.stringify(local_connection.localDescription));
                 //  console.log("Offer send!");

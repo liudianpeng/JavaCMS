@@ -81,8 +81,8 @@
       <file leaf-file-name="webrct.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/custom/webrct.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="249">
+              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -177,6 +177,8 @@
     <findStrings>
       <find>Stomp</find>
       <find>SockJS</find>
+      <find>send</find>
+      <find>websocket.send</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -292,7 +294,6 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="107" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="712" />
@@ -1515,12 +1516,12 @@
       <workItem from="1498463483278" duration="12427000" />
       <workItem from="1498504927201" duration="683000" />
       <workItem from="1498564799540" duration="536000" />
-      <workItem from="1498646669949" duration="2180000" />
+      <workItem from="1498646669949" duration="3580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="558261000" />
+    <option name="totallyTimeSpent" value="559661000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1532,7 +1533,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="107" y="22" width="1280" height="712" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="712" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1976,8 +1977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/custom/webrct.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        <state relative-caret-position="249">
+          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
           <folding />
         </state>
       </provider>
