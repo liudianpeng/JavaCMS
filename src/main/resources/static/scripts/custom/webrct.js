@@ -25,6 +25,7 @@ function open_socket() {
          console.log(event);
     };
     websocket.onmessage = function (socket_message) {
+        console.log(socket_message);
         if (!local_connection) {
             rtc_connect(false);
         }
